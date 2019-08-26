@@ -86,7 +86,8 @@ def interact_model(
                 print("=" * 40 + " SAMPLE " + str(generated) + " " + "=" * 40)
                 output_text += ' ' + text
                 print(text)
-        open('conditional_output.txt', 'w').close()
+        if os.path.isfile('./conditional_output.txt'):
+            open('conditional_output.txt', 'w').close()
         with open("conditional_output.txt", "w") as text_file:
             text_file.write(output_text)
         print("=" * 80)
